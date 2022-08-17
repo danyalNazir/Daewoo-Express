@@ -1,0 +1,129 @@
+﻿@using Daewoo_Web_Application.Models;
+@model Suggestion;                                           //making view stronglt typed(i.e. defining which type of data would came from this view)
+
+@{
+    ViewData["Title"] = "Contact US";
+}
+@section Styles{
+<link rel="stylesheet" href="~/css/ContactUS.css" />
+}
+
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 col-lg-6 col-xl-6">
+                <h1>CONTACT US</h1>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 100px; background: linear-gradient(to right, #3a4ed5 50%, #030a6e 120%); height: 3px" />
+                <p style="font-size:20px">
+                    You can contact us any way that is convenient for you. We are available 24/7 via email.
+                    You can also use a quick contact form below or visit our office personally.
+                </p>
+                <div class="container">
+                    <form asp-controller="Home" asp-action="ContactUS" method="post">
+
+                        <div class="row p-2">
+                            <div class="col-md-6 col-lg-5 col-xl-6">
+                                <label class="p-2 ms-2" asp-for=Suggestion_Status>Complaints/Suggestions</label>
+                                <select class="select-item p-3" asp-for=Suggestion_Status>
+                                    <option selected disabled value="select type">Select Suggestion Status</option>
+                                    <option value="complains">COMPLAINTS</option>
+                                    <option value="suggestions">SUGGESTIONS</option>
+                                </select>
+                                <span asp-validation-for=Suggestion_Status></span>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xl-6">
+                                <label class="p-2 ms-2" asp-for=Suggestion_Type>Suggestion Types</label>
+                                <select class="select-item p-3" asp-for=Suggestion_Type>
+                                    <option selected disabled value="select type">Select Suggestion Type</option>
+                                    <option value="bus">BUS</option>
+                                    <option value="cargo">CARGO</option>
+                                    <option value="staff">STAFF</option>
+                                    <option value="mobile app">MOBILE APP</option>
+                                    <option value="terminal">TERMINAL</option>
+                                    <option value="daewoo website">DAEWOO WEBSITE</option>
+                                    <option value="refund">REFUND</option>
+                                    <option value="tuck shop">TUCK SHOP</option>
+                                </select>
+                                <span asp-validation-for=Suggestion_Type></span>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-md-6 col-lg-5 col-xl-6">
+                                <label class="p-2 ms-2" asp-for=Suggestion_Title>Suggestion Title</label>
+                                <input class="input-item p-3" asp-for=Suggestion_Title placeholder="Title" />
+                                <span asp-validation-for=Suggestion_Title></span>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xl-6">
+                                <label class="p-2 ms-2" asp-for=UserName>Name</label>
+                                <input class="input-item p-3" asp-for=UserName placeholder="First Name" />
+                                <span asp-validation-for=UserName></span>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-md-6 col-lg-5 col-xl-6">
+                                <label class="p-2 ms-2" asp-for=Email>E-mail</label>
+                                <input class="input-item p-3" asp-for=Email placeholder="Email" />
+                                <span asp-validation-for=Email></span>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xl-6">
+                                <label class="p-2 ms-2" asp-for=Number>Mobile Number</label>
+                                <input class="input-item p-3" asp-for=Number placeholder="03*********" />
+                                <span asp-validation-for=Number></span>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-md-12 col-lg-10 col-xl-12">
+                                <label class="p-2 ms-2" asp-for=Message>Message</label>
+                                <textarea class="text-item p-3" asp-for="Message" placeholder="Short Message"></textarea>
+                                <span asp-validation-for=Message></span>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-md-8 col-lg-10 col-xl-12">
+                                <input class="btn-item" type="submit" value="SEND MESSAGE" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-6">
+                <img src="https://www.daewoo.com.pk/Theme/images/DaewooExpress.jpg" style="width:100%; height:90%" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="container p-5" style="text-align:center; background-color:#F2F3F9">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <i class="bi bi-geo-alt-fill fs-3" style="color:midnightblue"></i>
+                    <h5 class="mt-2">ADDRESS</h5>
+                    <p>Head Office: 231-A Ferozepur Road Lahore 54000 Pakistan</p>
+                </div>
+                <div class="col-md-4 col-lg-2 col-xl-2">
+                    <i class="bi bi-envelope-open-fill fs-3" style="color:midnightblue"></i>
+                    <h5 class="mt-2">E-MAIL</h5>
+                    <a class="text-decoration-none" style="color:black" href="mailto:#" target="_blank">info@daewoo.com.pk</a>
+                </div>
+                <div class="col-md-4 col-lg-2 col-xl-2 ">
+                    <i class="bi bi-calendar-check-fill fs-3" style="color:midnightblue"></i>
+                    <h5 class="mt-2">OPENING HOURS</h5>
+                    <p>24/7</p>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2">
+                    <i class="bi bi-telephone-fill fs-3" style="color:midnightblue"></i>
+                    <h5 class="mt-2">CALL CENTER FOR BOOKING</h5>
+                    <a class="text-decoration-none" style="color:black" href="callto:#" target="_blank"> 0304-111-7-008</a><br />
+                    <a class="text-decoration-none" style="color:black" href="callto:#" target="_blank">042-111-007-008</a>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-2 col-xl-3">
+                    <i class="bi bi-question-square-fill fs-3" style="color:midnightblue"></i>
+                    <h5 class="mt-2">COMPLAIN CELL</h5>
+                    <a class="text-decoration-none" style="color:black" href="callto:#" target="_blank">0334-4234672</a><br />
+                    <a class="text-decoration-none" style="color:black" href="callto:#" target="_blank"> 042-111-007-006</a><br />
+                    <a class="text-decoration-none" style="color:black" href="mailto:#" target="_blank">quality.assurance@daewoo.com.pk</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

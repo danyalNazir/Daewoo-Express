@@ -1,0 +1,130 @@
+﻿@section Styles{
+<link rel="stylesheet" href="~/css/Home.css" />
+}
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.daewoo.com.pk/Theme/images/Website_Banner_1349x495.jpg"  alt="Daewoo Poster">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://fastex.pk/images/smartcargo.jpg"  alt="Daewoo Fastex">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.daewoo.com.pk/Theme/images/Destination.jpeg"  alt="Daewoo Destinations Magazine">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="row mt-5 mb-5">
+        <h1 style="text-align:center"> DAEWOO SERVICES</h1>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+            style="width: 100px; background: linear-gradient(to right, #3a4ed5 50%, #030a6e 120%); height: 3px" />
+    </div>
+    <div class="row mb-5">
+        <div class="d-flex flex-wrap justify-content-evenly">
+            <div class="flex-md-row">
+                <div class="flex-md-column mb-5 col_item">
+                    <a asp-controller="Home" asp-action="AboutUS">
+                        <img src="https://www.daewoo.com.pk/Theme/images/DaewooExpress.jpg" alt="Daewoo Express" />
+                    </a>
+                    <h5 class="mt-2"> <a asp-controller="Home" asp-action="AboutUS">DAEWOO EXPRESS  </a></h5>
+
+                </div>
+                <div class="flex-md-column mb-5 col_item">
+                    <a href="http://fastex.pk/" target="_blank">
+                        <img src="https://www.daewoo.com.pk/Theme/images/DaewooFastex.jpg" alt="Daewoo Fastex" />
+                    </a>
+                    <h5 class="mt-2"> <a href="http://fastex.pk/" target="_blank">DAEWOO FastEX  </a></h5>
+
+                </div>
+            </div>
+            <div class="flex-md-row">
+                <div class="flex-md-column mb-5 col_item">
+                    <a href="https://www.destinations.com.pk/" target="_blank">
+                        <img src="https://www.daewoo.com.pk/Theme/images/Destination.jpeg" alt="Daewoo Destinations Magazine" />
+                    </a>
+                    <h5 class="mt-2"> <a href="https://www.destinations.com.pk/" target="_blank">DAEWOO DESTINATIONS MAGAZINE   </a></h5>
+
+                </div>
+                <div class="flex-md-column  mb-5 col_item">
+                    <a asp-controller="Home" asp-action="MultanMetroBus">
+                        <img src="https://www.daewoo.com.pk/Theme/images/multan-metro.jpg" alt="Daewoo Multan Metro" />
+                    </a>
+                    <h5 class="mt-2"><a asp-controller="Home" asp-action="MultanMetroBus"> DAEWOO MULTAN METRO </a></h5>
+                </div>
+            </div>
+            <div class="flex-md-row">
+                <div class="flex-md-column mb-5 col_item">
+                    <a asp-controller="Home" asp-action="LahoreFeederRoute">
+                        <img src="https://www.daewoo.com.pk/Theme/images/Lahore-Feeder-Rout-index.jpg " alt="Daewoo Lahore Feeder Route" />
+                    </a>
+                    <h5 class="mt-2"><a asp-controller="Home" asp-action="LahoreFeederRoute">DAEWOO LAHORE FEEDER ROUTE</a></h5>
+                </div>
+                <div class="flex-md-column mb-5 col_item">
+                    <a asp-controller="Home" asp-action="PeshawarBusRapidTransit">
+                        <img src="https://www.daewoo.com.pk/Theme/images/BRT.jpg " alt="Peshawar Bus Rapid Transit" />
+                    </a>
+                    <h5 class="mt-2"><a asp-controller="Home" asp-action="PeshawarBusRapidTransit">PESHAWAR BUS RAPID TRANSIT (BRT)</a></h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div style="background-image: linear-gradient(to right, #030a6e 20%, #3a4ed5);">
+            <div class="d-flex flex-wrap justify-content-around">
+                <div class="float-sm-start">
+                    <img src="https://www.daewoo.com.pk/Theme/Images/mobiles-e1477296308965-min.png" alt="" style="width:300px" />
+                </div>
+                <div class="mt-5" style="width:500px; color:white">
+                    <h3>GET DAEWOO MOBILE APP</h3>
+                    <hr class="mb-2 mt-0 d-inline-block mx-auto"
+                        style="width: 350px; color:white; height: 3px" />
+                    <p>
+                        Daewoo Express is a role model and trend setter private transport company in Pakistan with largest infrastructural setup and
+                        buses. We are using most modern information technology tools to facilitate the passengers.Now you can Book & Purchase your
+                        favorite seat without hassle or visiting our terminal. All you need to download and install our Mobile App that is available
+                        for both Android and iOS. The Bookings made using Mobile App will remain available till the departure of the bus and a
+                        confirmation SMS will be sent to valued passenger. You can buy the booked seat via Cash, Credit Card, Jazz Cash.
+                    </p>
+                    <span class="app-logo">
+                        <a style="text-decoration:none" href="https://play.google.com/store/apps/details?id=com.app.daewoo.miles&hl=en" target="_blank">
+                            <img src="https://www.daewoo.com.pk/Theme/images/store-min.png" style="height:60px; width:60px" />
+                        </a>
+                    </span>
+                    <span class="app-logo">
+                        <a style="text-decoration:none" href="https://apps.apple.com/us/app/daewoo-express/id1413159484?ls=1" target="_blank">
+                            <img src="https://www.daewoo.com.pk/Theme/images/apple-min.png" style="height:60px; width:60px" />
+                        </a>
+                    </span>
+                    <span class="app-logo">
+                        <a style="text-decoration:none" href="https://appgallery.huawei.com/#/app/C101322589" target="_blank">
+                            <img src="https://www.daewoo.com.pk/Theme/images/huawei_logo.svg" style="height:60px; width:60px" />
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Daewoo_Web_Application
+build_property.RootNamespace = Daewoo_Web_Application
+build_property.ProjectDir = F:\6th Semester\Enterprise Application Development\Daewoo Web Application\Daewoo Web Application\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\6th Semester\Enterprise Application Development\Daewoo Web Application\Daewoo Web Application
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/AboutUS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/ContactUS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VVMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/LahoreFeederRoute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMYWhvcmVGZWVkZXJSb3V0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/MultanMetroBus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNdWx0YW5NZXRyb0J1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/PeshawarBusRapidTransit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXNoYXdhckJ1c1JhcGlkVHJhbnNpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/Terminals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtaW5hbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/UsersDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2Vyc0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Home/Workshop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXb3Jrc2hvcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Login/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Login/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/PurchaseTicket/Bookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUaWNrZXRcQm9va2luZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/PurchaseTicket/BookTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUaWNrZXRcQm9va1RpY2tldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/PurchaseTicket/PurchaseTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUaWNrZXRcUHVyY2hhc2VUaWNrZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Shared/Components/BookingSchedules/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQm9va2luZ1NjaGVkdWxlc1xkZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Shared/Components/ScheduleDetails/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2NoZWR1bGVEZXRhaWxzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Shared/_footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Shared/_header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/6th Semester/Enterprise Application Development/Daewoo Web Application/Daewoo Web Application/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

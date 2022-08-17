@@ -1,0 +1,39 @@
+﻿.carousel-inner .carousel-item img {
+    width: 1350px;
+    height: 570px;
+}
+
+.col_item img {
+    width: 350px;
+    transition: all 0.5s;
+}
+
+.flex-md-column h5 {
+    color: blue;
+    text-align: center;
+    width:auto;
+}
+.col_item{
+    color:blue;
+    overflow:hidden;
+}
+    .col_item img:hover {
+        transform: scale(1.025);
+        opacity: 0.7;
+        cursor: pointer
+    }
+.col_item a{
+    text-decoration:none;
+    transition:all 0.4s;
+}
+.col_item a:hover {
+    color: midnightblue;
+}
+
+.app-logo img{
+    transition: all 0.4s;
+}
+.app-logo img:hover{
+    transform:scale(1.1);
+    transition:ease-in-out;
+}

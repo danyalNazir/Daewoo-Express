@@ -1,0 +1,16 @@
+﻿body {
+    background-color: #48b4e0 !important;
+}
+
+img{
+    width:10px
+}
+.bookingBody {
+    border: 5px dashed white;
+    margin-top:20px;
+    width:30%;
+    color:white;
+}
+.row{
+    align-self:center
+}

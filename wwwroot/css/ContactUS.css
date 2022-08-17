@@ -1,0 +1,34 @@
+﻿
+.select-item {
+    height: 59px;
+    width:100%;
+    border-radius: 30px;
+    background-color: #f2f3f9;
+    border: 1px solid #ccc;
+}
+.input-item {
+    height: 59px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #f2f3f9;
+    border: none
+}
+.text-item {
+    height: 200px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #f2f3f9;
+    border:none
+}
+.btn-item {
+    height: 50px;
+    width: 100%;
+    border-radius: 30px;
+    color: white;
+    background-color: royalblue;
+    border: none;
+    transition:all 0.4s;
+}
+    .btn-item:hover {
+        background-color: mediumblue;
+    }

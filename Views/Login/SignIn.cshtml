@@ -1,0 +1,29 @@
+﻿
+@using Daewoo_Web_Application.Models;
+@model User;                                               //making view stronglt typed(i.e. defining which type of data would came from this view)
+
+
+@section Styles{
+     <link rel="stylesheet" href="~/css/SignIn.css" />
+}
+@{
+    ViewData["Title"] = "SignIn";
+     Layout = "_LoginLayout";
+}
+
+
+<div class="wrapper">
+    <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/Daewoo_Express_Pakistan_Logo.png" alt=" Daewoo Express Logo"> </div>
+    <div class="text-center mt-4 name"><u>Sign In</u> </div>
+    <form class="p-3 mt-3" method="post" action=/Login/SignIn>
+
+       <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input asp-for=Email placeholder="Email ID"></div>
+        <span asp-validation-for=Email></span>
+        <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" asp-for=Password placeholder="Password"><i class="bi bi-eye-slash me-3" id="togglePassword" onclick="Password_Toggle('Password')"></i></div>
+        <span asp-validation-for=Password></span> 
+        <div class="" asp-validation-summary=ModelOnly></div>
+       <input class="btn mt-3" type="submit" name="submit" value="Login">
+    </form>
+    <div class="text-center fs-6"> <a href="#">Forget password?</a> or <a href="/Login/SignUp">Sign Up</a> </div>
+</div>
+

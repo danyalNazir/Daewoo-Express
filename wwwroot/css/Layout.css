@@ -1,0 +1,79 @@
+﻿header footer h1 {
+    font-family: cursive;
+}
+
+header footer a {
+    color: black;
+    font-size: 15px;
+    padding: 5px;
+    transition-duration: 0.4s;
+}
+
+.nav-link:hover {
+    background-color: rgba(56, 63, 78, 0.2);
+    color: white;
+}
+
+nav img {
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    width: 100%;
+}
+
+header {
+    background-color: lightgray;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+    }
+
+        nav ul li {
+            display: block;
+        }
+
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+        }
+
+        nav ul li:hover > ul {
+            display: inherit;
+        }
+
+#navbarScroll ul li:hover > ul {
+    display: inherit;
+}
+
+.social-icon {
+    transition: all 0.4s;
+}
+
+    .social-icon:hover {
+        color: midnightblue;
+    }
+
+.nav-item {
+    text-align: center;
+}
+

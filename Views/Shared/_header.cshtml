@@ -1,0 +1,40 @@
+﻿<header>
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow p-3 mb-1 bg-body rounded">
+        <div class="container-fluid flex-wrap">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Home" >
+                <img class="logo" style="width:143px; height:36px" src="https://www.daewoo.com.pk/Theme/images/daewoo_logo.png" />
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px; ">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" asp-controller="Home" asp-action="Home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Terminals">TERMINALS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            SERVICES
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="LahoreFeederRoute">Lahore Feeder Route</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="MultanMetroBus">Multan Metro Bus Service</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Workshop">Workshop</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="AboutUS">ABOUTUS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="ContactUS">SUGGESTIONS/COMPLAINTS</a>
+                    </li>
+                </ul>
+                <a class="btn btn-primary nav-link" asp-controller="PurchaseTicket" asp-action="PurchaseTicket" style="border-radius:20px; color:white;">PURCHASE TICKET</a>
+                <a class="text-decoration-none nav-link fs-5 ms-lg-2" style="color:blue; text-align:center" asp-controller="Login" asp-action="SignIn">Sign In</a>
+            </div>
+        </div>
+    </nav>
+</header>

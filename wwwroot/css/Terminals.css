@@ -1,0 +1,54 @@
+﻿.image {
+    position: relative;
+    overflow: hidden;
+}
+
+.image__img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    transition:all 0.3s;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+
+.image__title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.image__description {
+    font-size: 15px;
+    text-align: center;
+    padding:5px;
+}
+
+.col-item h3 {
+    text-align: center;
+    margin-top: 5px;
+    color: blue
+}
+.image:hover img,.image__overlay{
+    font-size:80%;
+    transform:scale(1.025);
+}

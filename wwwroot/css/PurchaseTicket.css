@@ -1,0 +1,68 @@
+﻿
+
+.scheduleContainer {
+    background-color: gainsboro;
+}
+
+.select-item {
+    height: 59px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #f2f3f9;
+    border: 1px solid #ccc;
+    border: none
+}
+
+.btn-item {
+    height: 59px;
+    width: 100%;
+    border-radius: 30px;
+    color: white;
+    background-color: royalblue;
+    border: none;
+    margin-top:40px;
+    transition: all 0.4s;
+}
+
+    .btn-item:hover {
+        background-color: mediumblue;
+    }
+
+.col-item label{
+    text-align:center;
+}
+
+.scheduleDescription {
+    background-color: blue;
+    color:white;
+    font-weight:bold;
+    font-size:30px;
+    text-align:center;
+}
+.error{
+    margin:0;
+}
+.schedules {
+    background-color: gainsboro;
+}
+.schedules img{
+    width:150px;
+    height:150px;
+}
+.schedules .status {
+    background-color: gray;
+    border-radius:5px;
+}
+    .schedules a {
+        font-size:20px;
+        height: 50px;
+        width: 100%;
+        border-radius: 30px;
+        color: white;
+        background-color: royalblue;
+        border: none;
+        transition: all 0.4s;
+    }
+    .schedules a:hover {
+        background-color: mediumblue;
+    }
