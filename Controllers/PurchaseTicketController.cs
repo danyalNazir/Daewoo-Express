@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Daewoo_Web_Application.Models;
 using Daewoo_Web_Application.Models.Interfaces;
-//using Daewoo_Web_Application.View_Components;
 namespace Daewoo_Web_Application.Controllers
 {
     public class PurchaseTicketController : Controller

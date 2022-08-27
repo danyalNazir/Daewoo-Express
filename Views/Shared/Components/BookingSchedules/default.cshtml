@@ -1,29 +1,89 @@
 ﻿@using Daewoo_Web_Application.View_Components;
 @using Daewoo_Web_Application.Models;
-@model BookingSchedule;
+@model List<BookingSchedule>;
 
 
-<div class="d-flex flex-md-row flex-wrap p-3 justify-content-between align-items-center">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGCKThPAWp5aPw7LfweoI0pl-LgOL1BWYJPqYMreLgAEaTovvIhab7SDpbxmFSz9ubGU&usqp=CAU" alt="Booking Bus Image" />
-            <div class="d-flex flex-md-column flex-wrap">
-                <h3 class="me-2">ECONOMY</h3>
-                <p>Departure 08:00 | Arrival 10:00</p>
-                <p>
-                    <b>Status: <span class="status p-1">OK</span></b>
-                    <b>Seats Left: </b><span class="status p-1">23</span>
-                    <b>Total Seats: </b><span class="status p-1">40</span>
-                </p>
-            </div>
-            <div class="flex-md-column">
-                <span><b>OK</b></span>
-            </div>
-            <div class="d-flex flex-md-column flex-wrap align-items-center">
-                <span><b>Rs.</b></span>
-                <div class="d-flex flex-md-column fs-3 ms-2">
-                    <span><b>450</b></span>
+
+
+@{
+    var purchaseTicketForm = (Daewoo_Web_Application.Models.PurchaseTicket)ViewData["PurchaseTicketForm"];
+
+    if (Model.Count > 0)
+    {
+        <div class="row mb-3 scheduleDescription">
+            <p>ROUTE: @purchaseTicketForm.Departure - @purchaseTicketForm.Arrival</p>
+            <p>DEPARTURE DATE: @purchaseTicketForm.Date</p>
+        </div>
+
+        foreach (Daewoo_Web_Application.Models.BookingSchedule schedule in Model)
+        {
+            <div class="row mb-3 schedules">
+                <div class="d-flex flex-md-row flex-wrap p-3 justify-content-between align-items-center">
+                    @{
+                        string imgsrc = "";
+                        if (schedule.Class.ToUpper().Trim() == "LUXURY")
+                            imgsrc = "https://www.globalvillagespace.com/wp-content/uploads/2019/05/chandi-chowk-to-china-pak-china-bus-service-commences-today.jpg";
+                        else if (schedule.Class.ToUpper().Trim() == "ECONOMY")
+                            imgsrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGCKThPAWp5aPw7LfweoI0pl-LgOL1BWYJPqYMreLgAEaTovvIhab7SDpbxmFSz9ubGU&usqp=CAU";
+                    }
+                    <img src="@Url.Content(@imgsrc)" alt="Booking Bus Image" />
+
+                    <div class="d-flex flex-md-column flex-wrap">
+                        <h3 class="me-2">@schedule.Class</h3>
+                        <p>Departure @schedule.Departure | Arrival @schedule.Arrival</p>
+                        <p>
+                            <b>Status: <span class="status p-1">@schedule.Status</span></b>
+                            <b>Seats Left: </b><span class="status p-1">@schedule.SeatsLeft</span>
+                            <b>Total Seats: </b><span class="status p-1">@schedule.TotalSeats</span>
+                        </p>
+                    </div>
+                    <div class="flex-md-column">
+                        <span><b>@schedule.Status</b></span>
+                    </div>
+                    <div class="d-flex flex-md-column flex-wrap align-items-center">
+                        <span><b>Rs.</b></span>
+                        <div class="d-flex flex-md-column fs-3 ms-2">
+                            <span><b>@schedule.Price</b></span>
+                        </div>
+                    </div>
+                    @{
+                        ScheduleDetails scheduleDetails = new ScheduleDetails
+                    {
+                        Departure = purchaseTicketForm.Departure,
+                        Arrival = purchaseTicketForm.Arrival,
+                        DepartureDate = purchaseTicketForm.Date,
+                        DepartureTime = schedule.Departure,
+                        BusType = schedule.Class,
+                        Fare = schedule.Price,
+                        SeatsLeft = schedule.SeatsLeft,
+                        TotalSeats = schedule.TotalSeats
+                    };
+
+                        using (Html.BeginForm("BookTicketScheduleDetails", "PurchaseTicket", FormMethod.Post, new { id = $"form_{schedule.ID}" }))
+                        {
+                            @Html.HiddenFor(s => scheduleDetails.Departure)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.Arrival)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.DepartureDate)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.DepartureTime)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.BusType)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.Fare)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.SeatsLeft)
+                            ;
+                            @Html.HiddenFor(s => scheduleDetails.TotalSeats)
+                            ;
+                        }
+                        <div class="flex-md-column">
+                            <a class="btn btn-primary" onclick="ScheduleDetailsForm(@schedule.ID);">BOOK NOW</a>
+                        </div>
+                    }
                 </div>
             </div>
-            <div class="flex-md-column">
-                <a class="btn btn-primary" asp-controller="PurchaseTicket" asp-action="BookTicket">BOOK NOW</a>
-            </div>
-        </div>
+        }
+    }
+}

@@ -5,37 +5,7 @@
 <link rel="stylesheet" href="~/css/BookTicket.css" />
 }
 @section Scripts{
-<script>
-    var count = 0;
-    var quantity = 0;
-        function seatClick(id){
-
-        var seatview = document.getElementById(id);
-        var seats = document.getElementById("Seats");
-        if (count == 0) {
-            seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/male_seat.png)";
-            count += 1;
-            seats.value = `${seatview.innerText},`;
-        }
-        else if (count == 1) {
-              seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/empty_seat.png)";
-            count = 0;
-            seats.value = ``;
-        }
-        //else if (count == 2) {
-        //    seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/empty_seat.png)";
-        //    count = 0;
-        //}
-        if (count == 1) {
-            quantity += 1;
-        }
-        else{
-        quantity = 0;
-        }
-
-        document.getElementById("Quantity").value = quantity;
-        }
-</script>
+<script src=~/js/BookTicket.js></script>
 }
 
 @{
@@ -64,22 +34,21 @@
             height: 3px;
           " />
     </div>
+
     <div class="row">
         <div class="col-md-12 col-lg-6 col-xl-6">
             <div class="seat_view d-flex flex-wrap">
                 <div class="flex-md-column">
                     <div class="seat_view_top">
-                        <strong>Male</strong>
+                        <strong>Vacant:</strong>
+                        <img src="https://www.daewoo.com.pk/Theme/Images/empty_seat.png"
+                             alt="Vacant seat view" />
+                        <strong>Selected:</strong>
                         <img src="https://www.daewoo.com.pk/Theme/Images/male_seat.png"
-                             alt="Male seat view" />
-                        <strong>Female</strong>
+                             alt="Selected seat view" />
+                        <strong> Sold out:</strong>
                         <img src="https://www.daewoo.com.pk/Theme/Images/female_seat.png"
-                             alt="Female seat view" />
-                        <strong>Taken Seats</strong>
-                        <img src="https://www.daewoo.com.pk/Theme/Images/male_taken_seat.png"
-                             alt="Taken male seat view" />
-                        <img src="https://www.daewoo.com.pk/Theme/Images/female_taken_seat.png"
-                             alt="Taken female seat view" />
+                             alt="Sold out seat view" />
                     </div>
                     <div class="seat_view_top">
                         <table style="border: 1px solid black">

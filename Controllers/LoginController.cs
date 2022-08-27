@@ -46,6 +46,7 @@ namespace Daewoo_Web_Application.Controllers
         [HttpPost]
         public ViewResult SignUp(IFormFile PostImage, User user)
         {
+            //Image Saving
             if (PostImage.FileName.Length > 0)
             {
                 //get last user's ID
@@ -55,7 +56,7 @@ namespace Daewoo_Web_Application.Controllers
                 if (users.Count > 0)
                     lastUserID = users[users.Count - 1].ID;
 
-                //Image Saving
+               //make Uploads directory
                 string wwwPath = this.Environment.WebRootPath;
                 string path = Path.Combine(wwwPath, "Uploads");
                 if (!Directory.Exists(path))
@@ -69,7 +70,7 @@ namespace Daewoo_Web_Application.Controllers
                 {
                     PostImage.CopyTo(stream);
                 }
-                user.ProfilePicture = pathWithFileName;
+                user.ProfilePicture = $"\\Uploads\\{fileName}";
             }
 
             if (ModelState.IsValid)

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mBBTyK8jqLC2W+72Yg+Dpbh0j2CUqRzi76FpX2OvgDg=",
+  "Hash": "Y4WMmUtAVOpvSConzgaUI2LMbKBFwobZ2YJUCGYmRSA=",
   "Source": "Daewoo Web Application",
   "BasePath": "_content/Daewoo Web Application",
   "Mode": "Default",
@@ -950,6 +950,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\js\\BookTicket.js",
+      "SourceId": "Daewoo Web Application",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\",
+      "BasePath": "_content/Daewoo Web Application",
+      "RelativePath": "js/BookTicket.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\BookTicket.js"
     },
     {
       "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\js\\login.js",
@@ -1972,12 +1989,12 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\14.jfif"
     },
     {
-      "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\Uploads\\15.jfif",
+      "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\Uploads\\15.jpg",
       "SourceId": "Daewoo Web Application",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\",
       "BasePath": "_content/Daewoo Web Application",
-      "RelativePath": "Uploads/15.jfif",
+      "RelativePath": "Uploads/15.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1986,7 +2003,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\15.jfif"
+      "OriginalItemSpec": "wwwroot\\Uploads\\15.jpg"
+    },
+    {
+      "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\Uploads\\16.jfif",
+      "SourceId": "Daewoo Web Application",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\",
+      "BasePath": "_content/Daewoo Web Application",
+      "RelativePath": "Uploads/16.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\16.jfif"
+    },
+    {
+      "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\Uploads\\17.jfif",
+      "SourceId": "Daewoo Web Application",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\",
+      "BasePath": "_content/Daewoo Web Application",
+      "RelativePath": "Uploads/17.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\17.jfif"
     },
     {
       "Identity": "F:\\6th Semester\\Enterprise Application Development\\Daewoo Web Application\\Daewoo Web Application\\wwwroot\\Uploads\\AbbottabadTerminal.jpg",
