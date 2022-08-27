@@ -1,8 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace Daewoo_Web_Application.Models
 {
     public class User
     {
+        public User()
+        {
+            Bookings = new HashSet<Booking>();
+        }
+
         public int ID { get; set; }
 
         [Required(ErrorMessage = "🛈 Please enter name.")]
@@ -34,6 +42,8 @@ namespace Daewoo_Web_Application.Models
         [Required(ErrorMessage = "🛈 Please enter confirm password.")]
         [Compare("Password", ErrorMessage = "🛈 Not matched.")]
         public string? ConfirmPassword { get; set; }
+        public string? ProfilePicture { get; set; }
 
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

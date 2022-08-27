@@ -1,4 +1,6 @@
-﻿@section Styles{
+﻿@model List<Daewoo_Web_Application.Models.Terminal>
+
+@section Styles{
 <link rel="stylesheet" href="~/css/Terminals.css" />
 }
 @{
@@ -12,185 +14,30 @@
         <hr class="mb-5 mt-0 d-inline-block mx-auto"
             style="width: 100px; background: linear-gradient(to right, #3a4ed5 50%, #030a6e 120%); height: 3px" />
     </div>
+
     <div class="row">
         <div class="d-flex flex-wrap justify-content-evenly">
-            <div class="flex-row">
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal1.jpg" alt="Lahore Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">LAHORE THOKAR</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Thokhar Niaz Baig between multan road & mohlanwal
-                                road near POS petrol pump Lahore.
-                                <br /> <br /><b>Phone:</b> 042-37498515
-                            </p>
+            @foreach (var terminal in Model)
+            {
+
+                <div class="flex-row">
+                    <div class="flex-column mb-5 col-item">
+                        <div class="image">
+                            <img class="image__img" src="@Url.Content(terminal.TerminalImage)" alt="@terminal.Name Terminal Image">
+                            <div class="image__overlay">
+                                <div class="image__title">@terminal.Name</div><br />
+                                <p class="image__description">
+                                    <b>Address:</b><br /><br />
+                                    @terminal.Address
+                                    <br /> <br /><b>Phone: </b>@terminal.Phone
+                                </p>
+                            </div>
+                            <h3>@terminal.Name</h3>
                         </div>
-                        <h3>LAHORE THOKAR</h3>
                     </div>
                 </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal22.jpg" alt="Rawalpindi Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">RAWALPINDI</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Khasra No. 1459/2/2, Village Jhangi Sayyedan, Near EME College,
-                                <br /> <br /><b>Phone:</b> 051-5466215
-                            </p>
-                        </div>
-                        <h3>RAWALPINDI</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal13.jpg" alt="Karachi Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">KARACHI</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Scheme# 33, Main Super Highway, Near PSO Petrol Pump, Suhrab Goth, Karachi.
-                                <br /> <br /><b>Phone:</b> 042-37498515
-                            </p>
-                        </div>
-                        <h3>KARACHI</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="flex-row">
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal5.jpg" alt="Multan Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title"> MULTAN (MAIN)</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Opp, TTC Kahnwawal Road, Gaddafi Chwok
-                                <br /> <br /><b>Phone:</b>061-6776363
-                            </p>
-                        </div>
-                        <h3> MULTAN (MAIN)</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal16.jpg" alt="Faisalabad Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">  FAISALABAD</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Chak No-123 (JB) Mohallah Akbarabad, Punj Pullian Road, Opp. Allied Hospital. Faisalabad.
-                                <br /> <br /><b>Phone:</b>  041-2627460
-                            </p>
-                        </div>
-                        <h3> FAISALABAD</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal36.jpg" alt="Abbottabad Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title"> ABBOTTABAD</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Near Mesile Chowk, Moza Jhangi, chowk Mandian, Main Mansehra Road, Abt Cantt.
-                                <br /> <br /><b>Phone:</b>  0992-384718
-                            </p>
-                        </div>
-                        <h3>ABBOTTABAD</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="flex-row">
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal31.jpg" alt="Sialkot Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title"> SIALKOT</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Garrison Park near jail Road, Skt Cantonment opp. GTS.
-                                <br /> <br /><b>Phone:</b> 052-4298807
-                            </p>
-                        </div>
-                        <h3> SIALKOT</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal12.jpg" alt="Hyderabad Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">   HYDERABAD</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Plot # A-21, Block-C, Unit#7, Autoban road,Latifabad
-                                <br /> <br /><b>Phone:</b>   022-3821608
-                            </p>
-                        </div>
-                        <h3>  HYDERABAD</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal27.jpg" alt="Swat Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title"> SWAT</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Amankot, GT Road, opp. PSO. Pump near GTS, Mingora.Swat
-                                <br /> <br /><b>Phone:</b>   0946-729105
-                            </p>
-                        </div>
-                        <h3> SWAT</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="flex-row">
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal34.jpg" alt="Gujranwala Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title"> GUJRANWALA</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Next to Rescue Office 1122 near Qutab Auto's Ad More Petrol Pump Gujranwala
-                                <br /> <br /><b>Phone:</b> 051-3412185
-                            </p>
-                        </div>
-                        <h3> GUJRANWALA</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal6.jpg" alt="Bahawalpur Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">BAHAWALPUR</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                Opp. SadiqPublic School, Ahmed Pur Road, Dera Nawab Sahib Road, near NLC.
-                                <br /> <br /><b>Phone:</b> 062-2877120
-                            </p>
-                        </div>
-                        <h3>BAHAWALPUR</h3>
-                    </div>
-                </div>
-                <div class="flex-column mb-5 col-item">
-                    <div class="image">
-                        <img class="image__img" src="https://www.daewoo.com.pk/Theme/images/Terminals/Terminal7.jpg" alt="Sadiqabad Terminal">
-                        <div class="image__overlay">
-                            <div class="image__title">SADIQABAD</div><br />
-                            <p class="image__description">
-                                <b>Address:</b><br /><br />
-                                KLP Road, Tehsil Sadiqabad, Dist, RYK.
-                                <br /> <br /><b>Phone:</b> 068-5674476
-                            </p>
-                        </div>
-                        <h3>SADIQABAD</h3>
-                    </div>
-                </div>
-            </div>
+
+            }
         </div>
     </div>
 </div>

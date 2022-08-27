@@ -5,19 +5,43 @@
 @{
     ViewData["Title"] = "Bookings";
 }
-<div class="d-flex justify-content-around">
+<div class="d-flex justify-content-around flex-wrap p-5">
     <div class="bookingBody container">
-        <div class="row mt-2">
-           <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/Daewoo_Express_Pakistan_Logo.png" alt="Daewoo Logo" />
+        <div class="row mt-2 justify-content-center ">
+            <img src="https://www.daewoo.com.pk/Theme/images/daewoo_logo.png" alt="Daewoo Logo" style="width:200px" />
         </div>
-       <div class="row mt-3">
-            <div class="col-md-12 col-lg-6 col-xl-6">
-                DANYAL
+
+        <div class="d-flex row mt-3 fs-4 justify-content-center flex-wrap"> DANYAL</div>
+        <div class="d-flex row mt-2 fs-6 justify-content-between flex-wrap">
+            <div class="col" style="text-align:start">
+                <p><b>Route</b><br /><b>LHR(THOKAR)-SKT</b></p>
+            </div>
+            <div class="col" style="text-align:end">
+                <p><b>Seat No</b><br /><b>19</b></p>
             </div>
         </div>
 
+        <div class="d-flex row mt-2 fs-6 justify-content-between flex-wrap">
+            <div class="col" style="text-align:start">
+                <p><b>Date</b><br /><b>17 Aug 2022</b></p>
+            </div>
+            <div class="col" style="text-align:end">
+                <p><b>Time</b><br /><b>06:30</b></p>
+            </div>
         </div>
+
+        <div class="d-flex row mt-2 justify-content-center flex-wrap">
+            <hr style="border-top: 3px dotted white" />
+        </div>
+
+        <div class="d-flex row mt-2 fs-6 flex-wrap" style="text-align:center">
+            <p><b>Booking Number</b><br /><b>0860276772</b></p>
+        </div>
+
+        <div class="d-flex row p-2 justify-content-center flex-wrap">
+            <a class="fs-5 p-2 btn btn-danger" style="border-radius:30px" asp-controller="" asp-action="">BUY TICKET</a>
+        </div>
+
     </div>
 
 </div>
-

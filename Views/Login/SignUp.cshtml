@@ -5,16 +5,22 @@
 @section Styles{
 <link rel="stylesheet" href="~/css/SignUp.css" />
 }
+
+@section Scripts{
+    <script src="~/js/login.js"></script>
+}
+
 @{
-    ViewData["Title"] = "Sign Up";
-      Layout = "_LoginLayout";
+    //ViewData["Title"] = "Sign Up";
+    ViewBag.Title = "Sign Up";
+    Layout = "_LoginLayout";
 }
 
 
 <div class="wrapper">
     <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/Daewoo_Express_Pakistan_Logo.png" alt=" Daewoo Express Logo"> </div>
     <div class="text-center mt-4 name"><u>Sign Up</u> </div>
-    <form class="p-3 mt-3" method="post" action=/Login/SignUp>
+    <form class="p-3 mt-3" id="signUpForm" method="post" action=/Login/SignUp enctype="multipart/form-data">
 
         <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input asp-for=Name placeholder="User Name"></div>
         <span asp-validation-for=Name></span>
@@ -22,12 +28,16 @@
         <span asp-validation-for=Number></span>
         <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input asp-for=CNIC placeholder="XXXXX-XXXXXXX-X"> </div>
         <span asp-validation-for=CNIC></span>
-        <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input asp-for=Email type="text" placeholder="Email ID"></div>
+        <div class="form-field d-flex align-items-center"> <span class="far fa-key"></span> <input asp-for=Email type="text" placeholder="Email ID"></div>
         <span asp-validation-for=Email></span>
         <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" asp-for=Password placeholder="Password"><i class="bi bi-eye-slash me-3" id="togglePassword" onclick="Password_Toggle('Password')"></i></div>
         <span asp-validation-for=Password></span>
         <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" asp-for=ConfirmPassword placeholder="Confirm Password"><i class="bi bi-eye-slash me-3" id="toggleConfirmPassword" onclick="Password_Toggle('ConfirmPassword')"></i></div>
         <span asp-validation-for=ConfirmPassword></span>
+        <div class="uploadImage" style="padding:5px">
+            <div><label for="uploadImage"><b>Profile Picture:</b></label></div>
+            <div><input type="file" accept="image/*" name="PostImage" id="uploadImage" required/><br /></div>
+        </div>
         <input class="btn mt-3" type="submit" name="submit" value="Sign Up">
         <br /><div asp-validation-summary=ModelOnly></div>
     </form>

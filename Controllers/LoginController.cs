@@ -1,10 +1,18 @@
 ﻿using Daewoo_Web_Application.Models;
+using Daewoo_Web_Application.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Daewoo_Web_Application.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly IUserRepo _repo;
+        private readonly IWebHostEnvironment Environment;
+        public LoginController(IUserRepo repo, IWebHostEnvironment environment)
+        {
+            _repo = repo;
+            Environment = environment;
+        }
         [HttpGet]
         public ViewResult SignIn()
         {
@@ -16,10 +24,10 @@ namespace Daewoo_Web_Application.Controllers
             if (user.Email == null || user.Password == null)
                 return View();
 
-            bool flag = UserRepository.Check_Credentials(user);
+            bool flag = _repo.Check_Credentials(user);
             if (flag)
-            { 
-                return RedirectToAction("Home","Home");
+            {
+                return RedirectToAction("Home", "Home");
             }
             else
             {
@@ -36,17 +44,43 @@ namespace Daewoo_Web_Application.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult SignUp(User user)
+        public ViewResult SignUp(IFormFile PostImage, User user)
         {
+            if (PostImage.FileName.Length > 0)
+            {
+                //get last user's ID
+                List<User> users = new List<User>();
+                users = _repo.GetUsers();
+                int lastUserID = 0;
+                if (users.Count > 0)
+                    lastUserID = users[users.Count - 1].ID;
+
+                //Image Saving
+                string wwwPath = this.Environment.WebRootPath;
+                string path = Path.Combine(wwwPath, "Uploads");
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+
+                var fileExtension = Path.GetExtension(PostImage.FileName);
+                var fileName = ($"{lastUserID + 1 }" + fileExtension).ToString();
+                var pathWithFileName = Path.Combine(path, fileName);
+                using (FileStream stream = new FileStream(pathWithFileName, FileMode.Create))
+                {
+                    PostImage.CopyTo(stream);
+                }
+                user.ProfilePicture = pathWithFileName;
+            }
+
             if (ModelState.IsValid)
             {
-                int flag = UserRepository.AddUser(user);
+                int flag = _repo.AddUser(user);
                 if (flag == 0)
                 {
                     ModelState.AddModelError(string.Empty, "🛈 An account with same email already exits!");
                     return View();
                 }
-                else if(flag == -1)
+                else if (flag == -1)
                 {
                     ModelState.AddModelError(string.Empty, "🛈 An account with same phone number already exits!");
                     return View();

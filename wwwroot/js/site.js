@@ -1,45 +1,52 @@
 ﻿
-function Password_Toggle(id) {
-    var element = document.getElementById(id);
-    var togglePassword = document.getElementById('togglePassword');
-    var toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
 
-    if (element == document.getElementById("Password")) {
-        if (element.type === "password") {
-            element.type = "text";
-            togglePassword.classList.remove("bi-eye-slash");
-            togglePassword.classList.add("bi-eye");
-        }
-        else {
-            element.type = "password";
-            togglePassword.classList.remove("bi-eye");
-            togglePassword.classList.add("bi-eye-slash");
-        }
-    }
-    else if (element == document.getElementById("ConfirmPassword")) {
-        if (element.type === "password") {
-            element.type = "text";
-            toggleConfirmPassword.classList.remove("bi-eye-slash");
-            toggleConfirmPassword.classList.add("bi-eye");
-        }
-        else {
-            element.type = "password";
-            toggleConfirmPassword.classList.remove("bi-eye");
-            toggleConfirmPassword.classList.add("bi-eye-slash");
-        }
-    }
-}
+//var signUpForm = document.getElementById("signUpForm");
+//var formData = new FormData(signUpForm);
 
-var count = 0;
-var quantity = 0;
-function tdClick(id) {
-    var seatview = document.getElementById(id);
-    var seats = document.getElementById("Seats");
-    alert(seatview.value);
-    seatview.addEventListener("click", e => {
-        alert(seatview.value);
-    })
-      //if (count == 0) {
+//$(document).ready(function () {
+
+//    signUpForm.submit(function (event) {
+
+//        event.preventDefault();
+
+//        $.ajax({
+//            type: "POST",
+//            url: "/Login/SignUp",
+//            data: formData,
+//            dataType: "json",
+//            encode: true,
+//            success: function (result) {
+//                console.log(result);
+//            },
+//            error: function (status, req, error) {
+//                console.log(status);
+//            }
+//        });
+//    });
+//});
+
+
+
+
+
+
+
+
+
+
+
+
+//var count = 0;
+//var quantity = 0;
+//function tdClick(id) {
+//    alert("hello");
+    //var seatview = document.getElementById(id);
+    //var seats = document.getElementById("Seats");
+    ////alert(seatview.value);
+    //seatview.addEventListener("click", e => {
+    //    alert(seatview.innerText);
+    //})
+    //if (count == 0) {
     //    seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/male_seat.png)";
     //    count += 1;
     //    seats.value = `${seatview.innerText}M,`;
@@ -57,4 +64,4 @@ function tdClick(id) {
     //    quantity += 1;
     //}
     //document.getElementById("Quantity").value = quantity;
-}
+//}

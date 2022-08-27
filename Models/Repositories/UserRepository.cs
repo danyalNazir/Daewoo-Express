@@ -1,13 +1,16 @@
 ﻿using Daewoo_Web_Application.Models;
-using Microsoft.Data.SqlClient;
+using Daewoo_Web_Application.Models.Interfaces;
+//using Microsoft.Data.SqlClient;
 using System.Linq;
 namespace Daewoo_Web_Application.Models
 {
-    public class UserRepository
+
+    public class UserRepository : IUserRepo
     {
 
-        public static int AddUser(User user)
+        public int AddUser(User user)
         {
+
             var DB = new DaewooExpressApplicationContext();                  // Making connection with DataBase Context
 
             var emailMatch = DB.Users.Any(u => u.Email == user.Email);       // Checking if a user is having same Email
@@ -18,7 +21,7 @@ namespace Daewoo_Web_Application.Models
             if (numberMatch)
                 return -1;
 
-            User newUser = new User { Name = user.Name, Number = user.Number, CNIC = user.CNIC, Email = user.Email, Password = user.Password };
+            User newUser = new User { Name = user.Name, Number = user.Number, CNIC = user.CNIC, Email = user.Email, Password = user.Password, ProfilePicture=user.ProfilePicture };
             DB.Users.Add(newUser);
             int flag = DB.SaveChanges();
             if (flag >= 1)
@@ -26,18 +29,20 @@ namespace Daewoo_Web_Application.Models
             else
                 return 0;
         }
-        public static bool Check_Credentials(User user)
+
+        public bool Check_Credentials(User user)
         {
             var DB = new DaewooExpressApplicationContext();                  // Making connection with DataBase Context
 
             var query = DB.Users.Any(u => u.Email == user.Email && u.Password == user.Password);
             if (query) return true;
             else return false;
-            //will make in parameterized(if exists)
         }
-        public static List<User> GetUsers()
+
+        public List<User> GetUsers()
         {
             var DB = new DaewooExpressApplicationContext();                  // Making connection with DataBase Context
+
             var query = DB.Users.Select(user => new { user.ID, user.Name, user.Number, user.CNIC, user.Email });
 
             List<User>? users = new List<User>();

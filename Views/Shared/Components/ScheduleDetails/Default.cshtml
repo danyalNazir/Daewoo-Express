@@ -1,4 +1,6 @@
 ﻿@using Daewoo_Web_Application.View_Components;
+@using Daewoo_Web_Application.Models;
+
 @model ScheduleDetails;
 
 <table>
@@ -13,11 +15,11 @@
     </thead>
     <tbody>
         <tr>
-            <td>LAHORE THOKAR</td>
-            <td>FAISALABAD</td>
-            <td>Fri, 27 May 2022</td>
-            <td> 06:00</td>
-            <td>Luxury</td>
+            <td>@Model.Departure</td>
+            <td>@Model.Arrival</td>
+            <td>@Model.DepartureDate</td>
+            <td>@Model.DepartureTime</td>
+            <td>@Model.BusType</td>
         </tr>
     </tbody>
 </table>

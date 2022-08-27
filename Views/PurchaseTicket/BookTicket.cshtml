@@ -4,6 +4,39 @@
 @section Styles{
 <link rel="stylesheet" href="~/css/BookTicket.css" />
 }
+@section Scripts{
+<script>
+    var count = 0;
+    var quantity = 0;
+        function seatClick(id){
+
+        var seatview = document.getElementById(id);
+        var seats = document.getElementById("Seats");
+        if (count == 0) {
+            seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/male_seat.png)";
+            count += 1;
+            seats.value = `${seatview.innerText},`;
+        }
+        else if (count == 1) {
+              seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/empty_seat.png)";
+            count = 0;
+            seats.value = ``;
+        }
+        //else if (count == 2) {
+        //    seatview.style.backgroundImage = "url(https://www.daewoo.com.pk/Theme/Images/empty_seat.png)";
+        //    count = 0;
+        //}
+        if (count == 1) {
+            quantity += 1;
+        }
+        else{
+        quantity = 0;
+        }
+
+        document.getElementById("Quantity").value = quantity;
+        }
+</script>
+}
 
 @{
     ViewData["Title"] = "Book Ticket";
@@ -17,12 +50,19 @@
             style="width: 100px; background: linear-gradient(to right, #3a4ed5 50%, #030a6e 120%); height: 3px" />
     </div>
     <div class="row mb-5 flex-md-column flex-wrap">
-        @await Component.InvokeAsync("ScheduleDetails"); <!--View Component is used-->
+        @{
+            ScheduleDetails scheduleDetails = (Daewoo_Web_Application.Models.ScheduleDetails)ViewData["BookTicketScheduleDetails"];
+        }
+        @await Component.InvokeAsync("ScheduleDetails", scheduleDetails) <!--View Component is used-->
     </div>
     <div class="row mt-5 mb-5">
-        <h1 style="text-align:center"> SELECT SEAT</h1>
+        <h1 style="text-align: center">SELECT SEAT</h1>
         <hr class="mb-4 mt-0 d-inline-block mx-auto"
-            style="width: 100px; background: linear-gradient(to right, #3a4ed5 50%, #030a6e 120%); height: 3px" />
+            style="
+            width: 100px;
+            background: linear-gradient(to right, #3a4ed5 50%, #030a6e 120%);
+            height: 3px;
+          " />
     </div>
     <div class="row">
         <div class="col-md-12 col-lg-6 col-xl-6">
@@ -30,92 +70,254 @@
                 <div class="flex-md-column">
                     <div class="seat_view_top">
                         <strong>Male</strong>
-                        <img src="https://www.daewoo.com.pk/Theme/Images/male_seat.png" alt="Male seat view" />
+                        <img src="https://www.daewoo.com.pk/Theme/Images/male_seat.png"
+                             alt="Male seat view" />
                         <strong>Female</strong>
-                        <img src="https://www.daewoo.com.pk/Theme/Images/female_seat.png" alt="Female seat view" />
+                        <img src="https://www.daewoo.com.pk/Theme/Images/female_seat.png"
+                             alt="Female seat view" />
                         <strong>Taken Seats</strong>
-                        <img src="https://www.daewoo.com.pk/Theme/Images/male_taken_seat.png" alt="Taken male seat view" />
-                        <img src="https://www.daewoo.com.pk/Theme/Images/female_taken_seat.png" alt="Taken female seat view" />
+                        <img src="https://www.daewoo.com.pk/Theme/Images/male_taken_seat.png"
+                             alt="Taken male seat view" />
+                        <img src="https://www.daewoo.com.pk/Theme/Images/female_taken_seat.png"
+                             alt="Taken female seat view" />
                     </div>
                     <div class="seat_view_top">
-                        <table style="border:1px solid black">
+                        <table style="border: 1px solid black">
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b1" onclick="tdClick('b1')">1</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b1"
+                                    onclick="seatClick('b1')">
+                                    1
+                                </td>
                                 <td class="seat_view_body-td staff-seat" id="b2">2</td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b3" onclick="tdClick('b3')">3</td>
-                                <td class="seat_view_body-td seat-td" id="b4" onclick="tdClick('b4')">4</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b3"
+                                    onclick="seatClick('b3')">
+                                    3
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b4"
+                                    onclick="seatClick('b4')">
+                                    4
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b5" onclick="tdClick('b5')">5</td>
-                                <td class="seat_view_body-td seat-td" id="b6" onclick="tdClick('b6')">6</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b5"
+                                    onclick="seatClick('b5')">
+                                    5
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b6"
+                                    onclick="seatClick('b6')">
+                                    6
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b7" onclick="tdClick('b7')">7</td>
-                                <td class="seat_view_body-td seat-td" id="b8" onclick="tdClick('b8')">8</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b7"
+                                    onclick="seatClick('b7')">
+                                    7
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b8"
+                                    onclick="seatClick('b8')">
+                                    8
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b9" onclick="tdClick('b9')">9</td>
-                                <td class="seat_view_body-td seat-td" id="b10" onclick="tdClick('b10')">10</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b9"
+                                    onclick="seatClick('b9')">
+                                    9
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b10"
+                                    onclick="seatClick('b10')">
+                                    10
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b11" onclick="tdClick('b11')">11</td>
-                                <td class="seat_view_body-td seat-td" id="b12" onclick="tdClick('b12')">12</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b11"
+                                    onclick="seatClick('b11')">
+                                    11
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b12"
+                                    onclick="seatClick('b12')">
+                                    12
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b13" onclick="tdClick('b13')">13</td>
-                                <td class="seat_view_body-td seat-td" id="b14" onclick="tdClick('b14')">14</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b13"
+                                    onclick="seatClick('b13')">
+                                    13
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b14"
+                                    onclick="seatClick('b14')">
+                                    14
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b15" onclick="tdClick('b15')">15</td>
-                                <td class="seat_view_body-td seat-td" id="b16" onclick="tdClick('b16')">16</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b15"
+                                    onclick="seatClick('b15')">
+                                    15
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b16"
+                                    onclick="seatClick('b16')">
+                                    16
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b7" onclick="tdClick('b17')">17</td>
-                                <td class="seat_view_body-td seat-td" id="b8" onclick="tdClick('b18')">18</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b17"
+                                    onclick="seatClick('b17')">
+                                    17
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b18"
+                                    onclick="seatClick('b18')">
+                                    18
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b19" onclick="tdClick('b19')">19</td>
-                                <td class="seat_view_body-td seat-td" id="b20" onclick="tdClick('b20')">20</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b19"
+                                    onclick="seatClick('b19')">
+                                    19
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b20"
+                                    onclick="seatClick('b20')">
+                                    20
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b21" onclick="tdClick('b21')">21</td>
-                                <td class="seat_view_body-td seat-td" id="b22" onclick="tdClick('b22')">22</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b21"
+                                    onclick="seatClick('b21')">
+                                    21
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b22"
+                                    onclick="seatClick('b22')">
+                                    22
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b23" onclick="tdClick('b23')">23</td>
-                                <td class="seat_view_body-td seat-td" id="b24" onclick="tdClick('b24')">24</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b23"
+                                    onclick="seatClick('b23')">
+                                    23
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b24"
+                                    onclick="seatClick('b24')">
+                                    24
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b25" onclick="tdClick('b25')">25</td>
-                                <td class="seat_view_body-td seat-td" id="b26" onclick="tdClick('b26')">26</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b25"
+                                    onclick="seatClick('b25')">
+                                    25
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b26"
+                                    onclick="seatClick('b26')">
+                                    26
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b27" onclick="tdClick('b27')">27</td>
-                                <td class="seat_view_body-td seat-td" id="b28" onclick="tdClick('b28')">28</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b27"
+                                    onclick="seatClick('b27')">
+                                    27
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b28"
+                                    onclick="seatClick('b28')">
+                                    28
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b29" onclick="tdClick('b29')">29</td>
-                                <td class="seat_view_body-td seat-td" id="b30" onclick="tdClick('b30')">30</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b29"
+                                    onclick="seatClick('b29')">
+                                    29
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b30"
+                                    onclick="seatClick('b30')">
+                                    30
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b31" onclick="tdClick('b31')">31</td>
-                                <td class="seat_view_body-td seat-td" id="b32" onclick="tdClick('b32')">32</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b31"
+                                    onclick="seatClick('b31')">
+                                    31
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b32"
+                                    onclick="seatClick('b32')">
+                                    32
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b33" onclick="tdClick('b33')">33</td>
-                                <td class="seat_view_body-td seat-td" id="b34" onclick="tdClick('b34')">34</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b33"
+                                    onclick="seatClick('b33')">
+                                    33
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b34"
+                                    onclick="seatClick('b34')">
+                                    34
+                                </td>
                                 <td class="seat_view_body-td"></td>
                                 <td class="seat_view_body-td"></td>
-                                <td class="seat_view_body-td seat-td" id="b35" onclick="tdClick('b35')">35</td>
-                                <td class="seat_view_body-td seat-td" id="b36" onclick="tdClick('b36')">36</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b35"
+                                    onclick="seatClick('b35')">
+                                    35
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b36"
+                                    onclick="seatClick('b36')">
+                                    36
+                                </td>
                             </tr>
                             <tr class="seat-tr">
-                                <td class="seat_view_body-td seat-td" id="b37" onclick="tdClick('b37')">37</td>
-                                <td colspan="2" class="seat_view_body-td seat-td" id="b38" onclick="tdClick('b38')">38</td>
-                                <td colspan="2" class="seat_view_body-td seat-td" id="b39" onclick="tdClick('b39')">39</td>
-                                <td class="seat_view_body-td seat-td" id="b40" onclick="tdClick('b40')">40</td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b37"
+                                    onclick="seatClick('b37')">
+                                    37
+                                </td>
+                                <td colspan="2"
+                                    class="seat_view_body-td seat-td"
+                                    id="b38"
+                                    onclick="seatClick('b38')">
+                                    38
+                                </td>
+                                <td colspan="2"
+                                    class="seat_view_body-td seat-td"
+                                    id="b39"
+                                    onclick="seatClick('b39')">
+                                    39
+                                </td>
+                                <td class="seat_view_body-td seat-td"
+                                    id="b40"
+                                    onclick="seatClick('b40')">
+                                    40
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -142,7 +344,7 @@
                         </div>
                         <div class="col-md-6 col-lg-5 col-xl-6">
                             <label class="p-2 ms-2" asp-for=Fare>Fare</label>
-                            <input class="input-item p-3" asp-for=Fare disabled />
+                            <input class="input-item p-3" asp-for=Fare value=@scheduleDetails.Fare disabled />
                         </div>
                     </div>
                     <div class="row p-2">
